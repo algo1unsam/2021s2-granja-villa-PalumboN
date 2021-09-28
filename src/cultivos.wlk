@@ -1,12 +1,15 @@
 import wollok.game.*
 
 class Maiz {
-	method position() {
-		// TODO: hacer que aparezca donde lo plante Hector
-		return game.at(1, 1)
-	}
+	const property position
+	var property esAdulto = false
+	
 	method image() {
-		// TODO: hacer que devuelva la imagen que corresponde
-		return "corn_baby.png"
+		const sufijo = if (esAdulto) "adult" else "baby" 
+		return "corn_" + sufijo +".png"
+	}
+	
+	method regar() {
+		esAdulto = true
 	}
 }

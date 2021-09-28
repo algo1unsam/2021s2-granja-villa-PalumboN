@@ -1,0 +1,18 @@
+import cultivos.*
+import wollok.game.*
+
+describe "Maiz" {
+	const maiz = new Maiz(position = game.origin())
+	
+	test "crece cuando se riega" {
+		assert.notThat(maiz.esAdulto())
+		maiz.regar()
+		assert.that(maiz.esAdulto())
+	}
+	
+	test "cambia la imagen cuando crece" {
+		assert.equals("corn_baby.png", maiz.image())
+		maiz.regar()
+		assert.equals("corn_adult.png", maiz.image())
+	}
+}

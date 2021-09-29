@@ -13,3 +13,16 @@ class Maiz {
 		esAdulto = true
 	}
 }
+
+class Trigo {
+	const property position
+	var nivel = 0
+	
+	method image() { 
+		return "wheat_" + nivel.toString() +".png"
+	}
+	
+	method regar() {
+		nivel = (nivel + 1) % 4
+	}
+}
